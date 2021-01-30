@@ -6,4 +6,5 @@
     <string name="temp_info_third_icon_second_column_text">Sunset</string>
     <string name="temp_info_second_icon_third_column_text">Wind</string>
     <string name="temp_info_third_icon_third_column_text">Daytime</string>
+    <string name="temp_empty_info_text">Nenhum previsão pesquisada, procure uma previsão do tempo abaixo</string>
 </resources>

@@ -1,7 +1,8 @@
-package com.victor.desafio_box
+package com.victor.desafio_box.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.victor.desafio_box.BuildConfig
 import com.victor.desafio_box.model.RetrofitClient
 import com.victor.desafio_box.model.WeatherResponse
 import com.victor.desafio_box.model.WeatherService
@@ -10,7 +11,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.lang.Exception
 
-class MainActivityViewModel : ViewModel() {
+class HomeViewModel : ViewModel() {
 
     val weather = MutableLiveData<WeatherResponse>()
 
@@ -24,12 +25,10 @@ class MainActivityViewModel : ViewModel() {
                     response: Response<WeatherResponse>
                 ) {
                     weather.postValue(response.body() as WeatherResponse)
-                    //val c = weather.value.weatherInfo.get(0).description
-
                 }
 
                 override fun onFailure(call: Call<WeatherResponse>, t: Throwable) {
-                    TODO("Not yet implemented")
+                    val a = ""
                 }
 
             })
