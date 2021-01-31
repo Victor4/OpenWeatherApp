@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/wallpaperImageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:contentDescription="TODO"
@@ -33,7 +33,7 @@
                 android:id="@+id/dateAndcityInfoConstraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_gravity="center_horizontal">
 
                 <TextView
@@ -41,13 +41,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
-                    android:layout_marginEnd="30dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/cityInfoConstraintLayout"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Sunday, 19 May 2019  |  4:30PM"
-                    />
+                    tools:text="Sunday, 19 May 2019  |  4:30PM" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cityInfoConstraintLayout"
@@ -56,7 +54,6 @@
                     android:background="@drawable/ic_background_city"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/dateAndTimeTextView"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
@@ -64,7 +61,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
-                        android:layout_marginEnd="0dp"
+                        android:layout_marginEnd="5dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/locationImageView"
                         app:layout_constraintStart_toStartOf="parent"
@@ -75,10 +72,11 @@
                         android:id="@+id/locationImageView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="25dp"
                         android:contentDescription="TODO"
                         android:src="@drawable/ic_location_blue"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/locationTextView"
                         app:layout_constraintTop_toTopOf="parent" />

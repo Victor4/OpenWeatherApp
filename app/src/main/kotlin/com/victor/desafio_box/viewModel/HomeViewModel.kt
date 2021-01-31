@@ -15,10 +15,10 @@ class HomeViewModel : ViewModel() {
 
     val weather = MutableLiveData<WeatherResponse>()
 
-    fun search(){
+    fun search(city : String){
         try {
             val a = RetrofitClient().builderClient().create(WeatherService::class.java)
-                .weatherDataCity("porto,alegre", BuildConfig.OPENWEATHER_KEY)
+                .weatherDataCity(city, BuildConfig.OPENWEATHER_KEY)
             a.enqueue(object : Callback<WeatherResponse> {
                 override fun onResponse(
                     call: Call<WeatherResponse>,
