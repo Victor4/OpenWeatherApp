@@ -4,12 +4,14 @@ import com.victor.desafio_box.BuildConfig
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RetrofitClient {
+object RetrofitBuilder {
 
-    fun builderClient(): Retrofit {
+    private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BuildConfig.OPENWEATHER_API)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
+    val weatherService : WeatherService = getRetrofit().create(WeatherService::class.java)
 }
