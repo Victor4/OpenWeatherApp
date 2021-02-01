@@ -1,0 +1,12 @@
+com/victor/weather/BuildConfig.java
+ com.victor.weather.BuildConfig
+com/victor/weather/databinding/ActivityThridColumnBinding.java
+ com.victor.weather.databinding.ActivityThridColumnBinding
+com/victor/weather/databinding/ActivityFirstColumnBinding.java
+ com.victor.weather.databinding.ActivityFirstColumnBinding
+com/victor/weather/databinding/ActivityHomeBinding.java
+ com.victor.weather.databinding.ActivityHomeBinding
+com/victor/weather/databinding/ActivitySecondColumnBinding.java
+ com.victor.weather.databinding.ActivitySecondColumnBinding
+com/victor/weather/databinding/FullContentMainBottomsheetBinding.java
+ com.victor.weather.databinding.FullContentMainBottomsheetBinding

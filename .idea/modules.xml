@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/desafio_dietbox.iml" filepath="$PROJECT_DIR$/.idea/modules/desafio_dietbox.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/desafio_dietbox.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/desafio_dietbox.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/desafio_dietbox.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/desafio_dietbox.data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/weather/desafio_dietbox.weather.iml" filepath="$PROJECT_DIR$/.idea/modules/weather/desafio_dietbox.weather.iml" />
     </modules>
   </component>
 </project>

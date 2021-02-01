@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion configs.targetSdk
+    buildToolsVersion configs.buildToolVersion
+
+    defaultConfig {
+        minSdkVersion configs.minSdk
+        targetSdkVersion configs.targetSdk
+
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "String", "OPENWEATHER_KEY", OPENWEATHER_KEY
+            buildConfigField "String", "OPENWEATHER_API", "\"https://api.openweathermap.org/\""
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "OPENWEATHER_KEY", OPENWEATHER_KEY
+            buildConfigField "String", "OPENWEATHER_API", "\"https://api.openweathermap.org/\""
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    viewBinding {
+        enabled = true
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+}
+
+dependencies {
+
+    implementation depend.androidX.androidCore.kotlinStdLib
+    implementation depend.androidX.androidCore.coreKtx
+    implementation depend.androidX.androidCore.appCompat
+    implementation depend.androidX.androidCore.constranintLayout
+    implementation depend.androidX.androidDesign.androidMaterial
+
+    implementation depend.androidX.coroutines
+
+    implementation depend.androidX.lifecycle.viewModel
+    implementation depend.androidX.lifecycle.liveData
+    implementation depend.androidX.lifecycle.runTime
+    implementation depend.androidX.lifecycle.comomJava8
+    implementation depend.androidX.lifecycle.service
+    implementation depend.androidX.lifecycle.process
+    implementation depend.androidX.lifecycle.reactivestreams
+
+    implementation depend.retrofit.retrofit2
+    implementation depend.retrofit.convertGson
+
+    api depend.room.roomRuntime
+    kapt depend.room.roomCompiler
+    implementation depend.room.roomKtx
+    testImplementation depend.room.roomTest
+
+    testImplementation depend.test.junit
+    androidTestImplementation depend.test.androidXJunit
+    androidTestImplementation depend.test.espressoCore
+}

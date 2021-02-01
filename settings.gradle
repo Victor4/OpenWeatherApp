@@ -1,2 +1,4 @@
+include ':weather'
+include ':data'
 include ':app'
 rootProject.name = "desafio_dietbox"

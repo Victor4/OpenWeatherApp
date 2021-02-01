@@ -1,0 +1,35 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml:2:1-12:12
+INJECTED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml:2:1-12:12
+INJECTED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml:2:1-12:12
+	package
+		ADDED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml:3:5-33
+		INJECTED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml
+		INJECTED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml:5:22-76
+application
+ADDED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml:6:5-9:19
+activity#com.victor.weather.activities.HomeActivity
+ADDED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml:7:9-8:20
+	android:name
+		ADDED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml:7:19-76
+uses-sdk
+INJECTED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml
+INJECTED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml
+INJECTED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml
+INJECTED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml
+		ADDED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml
+		INJECTED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml
+		ADDED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml
+		INJECTED from /root/AndroidStudioProjects/OpenWeatherApp/weather/src/main/AndroidManifest.xml

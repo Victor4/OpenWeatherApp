@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion configs.targetSdk
+    buildToolsVersion configs.buildToolVersion
 
     defaultConfig {
         applicationId "com.victor.desafio_box"
-        minSdkVersion 21
-        targetSdkVersion 30
+        minSdkVersion configs.minSdk
+        targetSdkVersion configs.targetSdk
         versionCode 1
         versionName "1.0"
 
@@ -18,15 +18,10 @@ android {
     }
 
     buildTypes {
-        debug{
-            buildConfigField "String", "OPENWEATHER_KEY", OPENWEATHER_KEY
-            buildConfigField "String", "OPENWEATHER_API", "\"https://api.openweathermap.org/\""
-        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "OPENWEATHER_KEY", OPENWEATHER_KEY
-            buildConfigField "String", "OPENWEATHER_API", "\"https://api.openweathermap.org/\""
+
         }
     }
     compileOptions {
@@ -47,6 +42,8 @@ android {
 }
 
 dependencies {
+
+    implementation project(':weather')
 
     implementation depend.androidX.androidCore.kotlinStdLib
     implementation depend.androidX.androidCore.coreKtx

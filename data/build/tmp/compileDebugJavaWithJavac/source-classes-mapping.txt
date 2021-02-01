@@ -1,0 +1,11 @@
+com/victor/data/BuildConfig.java
+ com.victor.data.BuildConfig
+com/victor/data/model/local/WeatherDao_Impl.java
+ com.victor.data.model.local.WeatherDao_Impl
+ com.victor.data.model.local.WeatherDao_Impl$1
+ com.victor.data.model.local.WeatherDao_Impl$2
+ com.victor.data.model.local.WeatherDao_Impl$3
+ com.victor.data.model.local.WeatherDao_Impl$4
+com/victor/data/model/local/WeatherDatabase_Impl.java
+ com.victor.data.model.local.WeatherDatabase_Impl
+ com.victor.data.model.local.WeatherDatabase_Impl$1

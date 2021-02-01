@@ -3,9 +3,8 @@ package com.victor.desafio_box
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.victor.desafio_box.activities.HomeActivity
 import com.victor.desafio_box.databinding.ActivityMainBinding
-
+import com.victor.weather.activities.HomeActivity
 
 
 class MainActivity : AppCompatActivity() {
