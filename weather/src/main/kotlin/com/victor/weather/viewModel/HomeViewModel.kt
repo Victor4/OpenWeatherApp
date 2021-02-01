@@ -8,14 +8,14 @@ import androidx.lifecycle.viewModelScope
 import com.victor.data.model.*
 import com.victor.data.model.local.WeatherDao
 import com.victor.data.model.local.WeatherDatabase
-import com.victor.data.model.remote.Repository
+import com.victor.data.model.Repository
 import com.victor.data.model.remote.model.WeatherResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.lang.Exception
-import java.util.*
+import java.util.Date
 
 class HomeViewModel(context: Context) : ViewModel() {
 

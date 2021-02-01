@@ -1803,6 +1803,7 @@ int id chronometer 0x0
 int id circle_center 0x0
 int id cityAutoCompleteTextView 0x0
 int id cityInfoConstraintLayout 0x0
+int id cityNameTextView 0x0
 int id clear_text 0x0
 int id clockwise 0x0
 int id confirm_button 0x0
@@ -1832,6 +1833,7 @@ int id design_menu_item_text 0x0
 int id design_navigation_view 0x0
 int id dialog_button 0x0
 int id disjoint 0x0
+int id dividerView 0x0
 int id dragDown 0x0
 int id dragEnd 0x0
 int id dragLeft 0x0
@@ -2160,6 +2162,7 @@ int layout activity_first_column 0x0
 int layout activity_home 0x0
 int layout activity_second_column 0x0
 int layout activity_thrid_column 0x0
+int layout city_item 0x0
 int layout custom_dialog 0x0
 int layout design_bottom_navigation_item 0x0
 int layout design_bottom_sheet_dialog 0x0

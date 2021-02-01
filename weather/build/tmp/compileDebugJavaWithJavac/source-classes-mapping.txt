@@ -10,3 +10,5 @@ com/victor/weather/databinding/ActivitySecondColumnBinding.java
  com.victor.weather.databinding.ActivitySecondColumnBinding
 com/victor/weather/databinding/FullContentMainBottomsheetBinding.java
  com.victor.weather.databinding.FullContentMainBottomsheetBinding
+com/victor/weather/databinding/CityItemBinding.java
+ com.victor.weather.databinding.CityItemBinding

@@ -1,6 +1,5 @@
 package com.victor.weather.activities
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
@@ -12,14 +11,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.victor.data.model.WeatherDTO
 import com.victor.weather.R
+import com.victor.weather.adapters.CityAdapter
 import com.victor.weather.databinding.ActivityHomeBinding
 import com.victor.weather.viewModel.HomeViewModel
 import com.victor.weather.viewModel.ViewModelFactory
 import java.text.SimpleDateFormat
-import java.util.*
-
+import java.util.Date
+import java.util.Locale
+import java.util.TimeZone
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var activityHomeBinding: ActivityHomeBinding
@@ -38,10 +40,9 @@ class HomeActivity : AppCompatActivity() {
         setContentView(activityHomeBinding.root)
         viewModel =
             ViewModelProvider(this, ViewModelFactory(baseContext)).get(HomeViewModel::class.java)
-
-
         dateFormatter.timeZone = TimeZone.getTimeZone(TIMEZONE)
         titleDateFormatter.timeZone = TimeZone.getTimeZone(TIMEZONE)
+
         prepareListeners()
         loadData(INICIAL_CITY)
     }
@@ -58,17 +59,30 @@ class HomeActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 
-    private fun hasInternet(): Boolean {
-        val cm = baseContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
-        var result = false
-        if (activeNetwork != null) {
-            result = activeNetwork.isConnectedOrConnecting
+    private fun prepareUi(weatherInfo: WeatherDTO) {
+        with(activityHomeBinding) {
+            dateAndTimeTextView.text = titleDateFormatter.format(weatherInfo.dayTime)
+
+            verifiDayOrNight(weatherInfo.dayTime, weatherInfo.sunrise, weatherInfo.sunset)
+
+            showWeatherDate(true)
+
+            locationTextView.text = weatherInfo.cityCountry
+            fillFirstColumnData(
+                weatherInfo.weather,
+                weatherInfo.humidity,
+                weatherInfo.sunrise
+            )
+            fillSecondColumnData(weatherInfo.temp, weatherInfo.pressure, weatherInfo.sunset)
+            fillThirdColumnData(
+                weatherInfo.maxTemp,
+                weatherInfo.minTemp,
+                weatherInfo.wind,
+                weatherInfo.dayTime
+            )
         }
-        return result
     }
 
     private fun prepareListeners() {
@@ -100,6 +114,10 @@ class HomeActivity : AppCompatActivity() {
         })
 
         viewModel.readAllWeather.observe(this, Observer { itensFromDatabase ->
+            val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+            activityHomeBinding.searchBottomSheet.searchBeforeRecycleView.layoutManager = layoutManager
+            activityHomeBinding.searchBottomSheet.searchBeforeRecycleView.adapter =
+                CityAdapter(itensFromDatabase.map { weatherDTO -> weatherDTO.city }, this)
             allWeatherDatabse = itensFromDatabase
         })
 
@@ -110,33 +128,19 @@ class HomeActivity : AppCompatActivity() {
         })
     }
 
+    private fun hasInternet(): Boolean {
+        val cm = baseContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
+        var result = false
+        if (activeNetwork != null) {
+            result = activeNetwork.isConnectedOrConnecting
+        }
+        return result
+    }
+
     private fun hideKeyBoard() {
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
-    }
-
-    private fun prepareUi(weatherInfo: WeatherDTO) {
-        with(activityHomeBinding) {
-            dateAndTimeTextView.text = titleDateFormatter.format(weatherInfo.dayTime)
-
-            verifiDayOrNight(weatherInfo.dayTime, weatherInfo.sunrise, weatherInfo.sunset)
-
-            showWeatherDate(true)
-
-            locationTextView.text = weatherInfo.cityCountry
-            fillFirstColumnData(
-                weatherInfo.weather,
-                weatherInfo.humidity,
-                weatherInfo.sunrise
-            )
-            fillSecondColumnData(weatherInfo.temp, weatherInfo.pressure, weatherInfo.sunset)
-            fillThirdColumnData(
-                weatherInfo.maxTemp,
-                weatherInfo.minTemp,
-                weatherInfo.wind,
-                weatherInfo.dayTime
-            )
-        }
     }
 
     private fun showWeatherDate(show: Boolean) {

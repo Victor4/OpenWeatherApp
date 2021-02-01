@@ -1,10 +1,9 @@
-package com.victor.data.model.remote
+package com.victor.data.model
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.victor.data.BuildConfig
-import com.victor.data.model.WeatherDTO
 import com.victor.data.model.local.WeatherDao
+import com.victor.data.model.remote.RetrofitBuilder
 import com.victor.data.model.remote.model.WeatherResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -20,7 +19,7 @@ class Repository() {
         }
     }
 
-    inner class Local(private val weatherDao: WeatherDao, city: String? ="") {
+    inner class Local(private val weatherDao: WeatherDao) {
             val readAllWeather : LiveData<List<WeatherDTO>> = weatherDao.readAllWeather()
 
             suspend fun addWeather(weatherDTO: WeatherDTO){

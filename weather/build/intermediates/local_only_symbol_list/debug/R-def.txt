@@ -36,9 +36,11 @@ font lato_light
 id bottomSheet
 id cityAutoCompleteTextView
 id cityInfoConstraintLayout
+id cityNameTextView
 id dateAndTimeTextView
 id dateAndcityInfoConstraintLayout
 id daytimeTextView
+id dividerView
 id firstColumnLayout
 id humidityTextView
 id locationImageView
@@ -68,6 +70,7 @@ layout activity_first_column
 layout activity_home
 layout activity_second_column
 layout activity_thrid_column
+layout city_item
 layout full_content_main_bottomsheet
 string app_name
 string temp_empty_info_text

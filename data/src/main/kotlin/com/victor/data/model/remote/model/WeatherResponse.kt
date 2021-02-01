@@ -1,7 +1,6 @@
 package com.victor.data.model.remote.model
 
 import com.google.gson.annotations.SerializedName
-import com.victor.data.model.remote.SysInfo
 
 data class WeatherResponse(
     @SerializedName("coord")

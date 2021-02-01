@@ -1804,6 +1804,7 @@ id chronometer
 id circle_center
 id cityAutoCompleteTextView
 id cityInfoConstraintLayout
+id cityNameTextView
 id clear_text
 id clockwise
 id confirm_button
@@ -1833,6 +1834,7 @@ id design_menu_item_text
 id design_navigation_view
 id dialog_button
 id disjoint
+id dividerView
 id dragDown
 id dragEnd
 id dragLeft
@@ -2161,6 +2163,7 @@ layout activity_first_column
 layout activity_home
 layout activity_second_column
 layout activity_thrid_column
+layout city_item
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
